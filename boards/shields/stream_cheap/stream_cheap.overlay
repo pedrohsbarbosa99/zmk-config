@@ -1,11 +1,5 @@
-// This file was generated from a template. Edit it to match your keyboard.
-// See https://zmk.dev/docs/development/hardware-integration/new-shield for more
-// instructions.
-
-
-#include "stream_cheap-layouts.dtsi"
-
-&kscan {
+&kscan0 {
+    compatible = "zmk,kscan-gpio-matrix";
 
     row-gpios = <
         &gpio0 29 GPIO_ACTIVE_LOW
@@ -21,4 +15,3 @@
 
     diode-direction = "col2row";
 };
-
