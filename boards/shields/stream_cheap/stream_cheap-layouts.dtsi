@@ -8,7 +8,7 @@
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
         transform = <&default_transform>;
-        kscan = <&kscan>;
+        kscan = <&kscan0>;
 
         // Edit this to define the positions and sizes of the keys, or remove it
         // if your keyboard will not support ZMK Studio.
@@ -16,8 +16,12 @@
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0    0       0     0     0>
             , <&key_physical_attrs 100 100  100    0       0     0     0>
+            , <&key_physical_attrs 100 100  200    0       0     0     0>
+            , <&key_physical_attrs 100 100  300    0       0     0     0>
             , <&key_physical_attrs 100 100    0  100       0     0     0>
             , <&key_physical_attrs 100 100  100  100       0     0     0>
+            , <&key_physical_attrs 100 100  200  100       0     0     0>
+            , <&key_physical_attrs 100 100  300  100       0     0     0>
             ;
     };
 };
