@@ -2,12 +2,10 @@
 // See https://zmk.dev/docs/development/hardware-integration/new-shield for more
 // instructions.
 
-#include <dt-bindings/zmk/matrix_transform.h>
 
 #include "stream_cheap-layouts.dtsi"
 
-&kscan0 {
-    compatible = "zmk,kscan-gpio-matrix";
+&kscan {
 
     row-gpios = <
         &gpio0 29 GPIO_ACTIVE_LOW
