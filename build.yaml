@@ -20,5 +20,5 @@
 ---
 
 include:
-  - board: stream_cheap
+  - board: nice_nano
     shield: stream_cheap
