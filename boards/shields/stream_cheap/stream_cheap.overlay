@@ -1,0 +1,39 @@
+// This file was generated from a template. Edit it to match your keyboard.
+// See https://zmk.dev/docs/development/hardware-integration/new-shield for more
+// instructions.
+
+#include <dt-bindings/zmk/matrix_transform.h>
+
+#include "stream_cheap-layouts.dtsi"
+
+/ {
+    chosen {
+        zmk,keyboard = &keyboard;
+    };
+
+    keyboard: keyboard {
+        compatible = "zmk,keyboard";
+
+        matrix {
+            compatible = "zmk,matrix-gpio";
+
+            rows = <2>;
+            columns = <4>;
+
+            row-gpios = <
+                &gpio0 29 GPIO_ACTIVE_LOW
+                &gpio0 31 GPIO_ACTIVE_LOW
+            >;
+
+            col-gpios = <
+                &gpio0 24 GPIO_ACTIVE_LOW
+                &gpio0 22 GPIO_ACTIVE_LOW
+                &gpio0 20 GPIO_ACTIVE_LOW
+                &gpio0 17 GPIO_ACTIVE_LOW
+            >;
+
+            diode-direction = "col2row";
+        };
+    };
+};
+
