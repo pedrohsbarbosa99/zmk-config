@@ -6,34 +6,21 @@
 
 #include "stream_cheap-layouts.dtsi"
 
-/ {
-    chosen {
-        zmk,keyboard = &keyboard;
-    };
+&kscan0 {
+    compatible = "zmk,kscan-gpio-matrix";
 
-    keyboard: keyboard {
-        compatible = "zmk,keyboard";
+    row-gpios = <
+        &gpio0 29 GPIO_ACTIVE_LOW
+        &gpio0 31 GPIO_ACTIVE_LOW
+    >;
 
-        matrix {
-            compatible = "zmk,matrix-gpio";
+    col-gpios = <
+        &gpio0 24 GPIO_ACTIVE_LOW
+        &gpio0 22 GPIO_ACTIVE_LOW
+        &gpio0 20 GPIO_ACTIVE_LOW
+        &gpio0 17 GPIO_ACTIVE_LOW
+    >;
 
-            rows = <2>;
-            columns = <4>;
-
-            row-gpios = <
-                &gpio0 29 GPIO_ACTIVE_LOW
-                &gpio0 31 GPIO_ACTIVE_LOW
-            >;
-
-            col-gpios = <
-                &gpio0 24 GPIO_ACTIVE_LOW
-                &gpio0 22 GPIO_ACTIVE_LOW
-                &gpio0 20 GPIO_ACTIVE_LOW
-                &gpio0 17 GPIO_ACTIVE_LOW
-            >;
-
-            diode-direction = "col2row";
-        };
-    };
+    diode-direction = "col2row";
 };
 
