@@ -7,6 +7,7 @@
 
 / {
     keymap {
+        physical-layout = <&macropad_2x4>;
         compatible = "zmk,keymap";
 
         default_layer {
