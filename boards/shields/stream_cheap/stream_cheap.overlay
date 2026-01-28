@@ -1,5 +1,4 @@
-#include <dt-bindings/zmk/matrix_transform.h>
-#include <stream_cheap-layouts.dtsi>
+#include "stream_cheap.dtsi"
 
 &kscan {
         col-gpios = <
