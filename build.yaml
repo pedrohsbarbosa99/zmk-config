@@ -22,7 +22,8 @@
 include:
   - board: nice_nano
     shield: stream_cheap
-  - board: nice_nano
-    shield: settings_reset
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
+  - board: nice_nano
+    shield: settings_reset
+    
