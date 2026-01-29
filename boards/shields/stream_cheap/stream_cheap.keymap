@@ -13,14 +13,14 @@
         default_layer {
             bindings = <
                 &kp N1     &kp N2     &kp N3     &kp N4
-                &kp N5    &kp N6     &kp N7     &to 1
+                &kp N5    &kp N6     &kp N7     &mo 1
             >;
         };
 
         bluetooth_layer {
             bindings = <
                 &bt BT_SEL 0     &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3
-                &studio_unlock   &bt BT_CLR     &bootloader  &to 0
+                &studio_unlock   &bt BT_CLR     &bootloader  &mo 1
             >;
         };
     };
