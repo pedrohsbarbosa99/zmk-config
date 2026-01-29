@@ -8,3 +8,20 @@
             &gpio0 24 GPIO_ACTIVE_HIGH
         >;
     };
+
+/ {
+    battery: battery {
+        compatible = "zmk,battery-voltage-divider";
+        label = "BATTERY";
+
+        io-channels = <&adc 2>;   /* P0.04 = AIN2 */
+        output-ohms = <1000000>;
+        full-ohms = <2000000>;
+
+        power-off-voltage-mv = <3300>;
+    };
+};
+
+&adc {
+    status = "okay";
+};
