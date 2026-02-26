@@ -12,23 +12,23 @@
             flavor = "tap-preferred";
             tapping-term-ms = <220>;
             quick-tap-ms = <150>;
-            bindings = <&kp>, <&kp>;
+            bindings = <&kp &kp>;
         };
 
         slash_qmark: slash_qmark_ht {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp SLASH>, <&kp QUESTION>;
+            bindings = <&kp SLASH &kp QUESTION>;
         };
 
         quote_behavior: quote_ht {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             flavor = "hold-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp DQT>, <&kp SQT>;
+            bindings = <&kp DQT &kp SQT>;
         };
 
         arrow_macro: arrow_macro_node {
@@ -45,10 +45,10 @@
 
         arrow_behavior: arrow_ht {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&arrow_macro>, <&fat_arrow_macro>;
+            bindings = <&arrow_macro &fat_arrow_macro>;
         };
     };
 
