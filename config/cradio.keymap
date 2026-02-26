@@ -45,7 +45,7 @@
 
         arrow_behavior: arrow_ht {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
             bindings = <&arrow_macro &fat_arrow_macro>;
@@ -96,7 +96,7 @@
             bindings = <
                 &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT     &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR
                 &kp LPAR &kp RPAR &quote_behavior DQT SQT  &kp TILDE &kp COLON   &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH
-                &kp LBRC &kp RBRC &kp PIPE  &slash_qmark SLASH QUESTION  &arrow_behavior   &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE
+                &kp LBRC &kp RBRC &kp PIPE  &slash_qmark SLASH QUESTION  &arrow_behavior 0 0  &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE
                        &kp CAPS &kp SPACE &kp ENTER &trans
             >;
         };
