@@ -55,18 +55,18 @@
 
         mo_tab: mo_tab_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp TAB &mo 2>;
+            bindings = <&kp &mo>;
         };
 
         mo_bspc: mo_bspc_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp BSPC &mo 3>;
+            bindings = <&kp &mo>;
         };
     };
 
@@ -87,7 +87,7 @@
                 &hrm LCTRL A  &hrm LALT S  &hrm LGUI D  &hrm LSHIFT F  &kp G
                 &kp H    &hrm RSHIFT J  &kp K    &hrm LALT L   &hrm RCTRL SEMI
                 &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N    &kp M    &kp COMMA &kp DOT  &kp SLASH
-                       &mo_tab   &kp SPACE    &kp ENTER   &mo_bspc
+                       &mo_tab TAB 2   &kp SPACE    &kp ENTER   &mo_bspc BSPC 3
             >;
         };
 
@@ -97,7 +97,7 @@
                 &hrm LGUI A  &hrm LALT S  &hrm LCTRL D  &hrm LSHIFT F  &kp G
                 &kp H    &hrm RSHIFT J  &hrm RCTRL K  &hrm LALT L  &hrm RGUI SEMI
                 &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N    &kp M    &kp COMMA &kp DOT  &kp SLASH
-                       &mo_tab   &kp SPACE    &kp ENTER   &mo_bspc
+                       &mo_tab TAB 2   &kp SPACE    &kp ENTER   &mo_bspc BSPC 3
             >;
         };
 
