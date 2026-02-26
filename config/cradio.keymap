@@ -3,108 +3,111 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-behaviors {
-        hrm: hold_tap {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <220>;
-        quick-tap-ms = <150>;
-        bindings = <&kp>, <&kp>;
+
+    behaviors {
+
+        hrm: hrm_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <220>;
+            quick-tap-ms = <150>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        slash_qmark: slash_qmark_ht {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp SLASH>, <&kp QUESTION>;
+        };
+
+        quote_behavior: quote_ht {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "hold-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&kp DQT>, <&kp SQT>;
+        };
+
+        arrow_macro: arrow_macro_node {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp MINUS &kp GT>;
+        };
+
+        fat_arrow_macro: fat_arrow_macro_node {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp EQUAL &kp GT>;
+        };
+
+        arrow_behavior: arrow_ht {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            bindings = <&arrow_macro>, <&fat_arrow_macro>;
+        };
     };
 
-    slash_qmark: hold_tap {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <200>;
-        bindings = <&kp SLASH>, <&kp QUESTION>;
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <2 3>;
+            then-layer = <4>;
+        };
     };
 
-    quote_behavior: hold_tap {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "hold-preferred";
-        tapping-term-ms = <200>;
-        bindings = <&kp DQT>, <&kp SQT>;
-    };
+    keymap {
+        compatible = "zmk,keymap";
 
-    arrow_macro: macro {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&kp MINUS &kp GT>;
-    };
-
-    fat_arrow_macro: macro {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        bindings = <&kp EQUAL &kp GT>;
-    };
-
-    arrow_behavior: hold_tap {
-        compatible = "zmk,behavior-hold-tap";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <200>;
-        bindings = <&arrow_macro>, <&fat_arrow_macro>;
-    };
-};
-
-conditional_layers {
-    compatible = "zmk,conditional-layers";
-    tri_layer {
-        if-layers = <2 3>;
-        then-layer = <4>;
-    };
-};
-
-keymap {
-    compatible = "zmk,keymap";
-
-    default_layer {
-        bindings = <
-            &kp Q    &kp W    &kp E    &kp R    &kp T        &kp Y    &kp U    &kp I    &kp O    &kp P
-            &hrm LCTRL A  &hrm LALT S  &hrm LGUI D  &hrm LSHIFT F  &kp G
-            &kp H    &hrm RSHIFT J  &kp K    &hrm LALT L   &hrm RCTRL SEMI
-            &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N    &kp M    &kp COMMA &kp DOT  &kp SLASH
+        default_layer {
+            bindings = <
+                &kp Q    &kp W    &kp E    &kp R    &kp T        &kp Y    &kp U    &kp I    &kp O    &kp P
+                &hrm LCTRL A  &hrm LALT S  &hrm LGUI D  &hrm LSHIFT F  &kp G
+                &kp H    &hrm RSHIFT J  &kp K    &hrm LALT L   &hrm RCTRL SEMI
+                &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N    &kp M    &kp COMMA &kp DOT  &kp SLASH
                        &lt 2 TAB   &kp SPACE    &kp ENTER   &lt 3 BSPC
-        >;
-    };
+            >;
+        };
 
-    mac_layer {
-        bindings = <
-            &kp Q    &kp W    &kp E    &kp R    &kp T        &kp Y    &kp U    &kp I    &kp O    &kp P
-            &hrm LGUI A  &hrm LALT S  &hrm LCTRL D  &hrm LSHIFT F  &kp G
-            &kp H    &hrm RSHIFT J  &hrm RCTRL K  &hrm LALT L  &hrm RGUI SEMI
-            &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N    &kp M    &kp COMMA &kp DOT  &kp SLASH
+        mac_layer {
+            bindings = <
+                &kp Q    &kp W    &kp E    &kp R    &kp T        &kp Y    &kp U    &kp I    &kp O    &kp P
+                &hrm LGUI A  &hrm LALT S  &hrm LCTRL D  &hrm LSHIFT F  &kp G
+                &kp H    &hrm RSHIFT J  &hrm RCTRL K  &hrm LALT L  &hrm RGUI SEMI
+                &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N    &kp M    &kp COMMA &kp DOT  &kp SLASH
                        &lt 2 TAB   &kp SPACE    &kp ENTER   &lt 3 BSPC
-        >;
-    };
+            >;
+        };
 
-    lower_layer {
-        bindings = <
-            &kp N1  &kp N2  &kp N3  &kp N4  &kp N5      &kp N6   &kp N7   &kp N8   &kp N9   &kp N0
-            &kp LCTRL &kp LALT &kp LGUI &kp LSHIFT &none   &kp LEFT &kp UP &kp DOWN &kp RIGHT &kp DEL
-            &none &none &none &kp HOME &kp END      &none &none &none &none &kp ESC
-                    &none &kp SPACE &kp ENTER &lt 4 BSPC
-        >;
-    };
+        lower_layer {
+            bindings = <
+                &kp N1  &kp N2  &kp N3  &kp N4  &kp N5      &kp N6   &kp N7   &kp N8   &kp N9   &kp N0
+                &kp LCTRL &kp LALT &kp LGUI &kp LSHIFT &none   &kp LEFT &kp UP &kp DOWN &kp RIGHT &kp DEL
+                &none &none &none &kp HOME &kp END      &none &none &none &none &kp ESC
+                       &none &kp SPACE &kp ENTER &lt 4 BSPC
+            >;
+        };
 
-    raise_layer {
-        bindings = <
-            &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT     &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR
-            &kp LPAR &kp RPAR &quote_behavior  &kp TILDE &kp COLON   &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH
-            &kp LBRC &kp RBRC &kp PIPE  &slash_qmark  &arrow_behavior   &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE
-                    &kp CAPS &kp SPACE &kp ENTER &trans
-        >;
-    };
+        raise_layer {
+            bindings = <
+                &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT     &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR
+                &kp LPAR &kp RPAR &quote_behavior  &kp TILDE &kp COLON   &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH
+                &kp LBRC &kp RBRC &kp PIPE  &slash_qmark  &arrow_behavior   &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE
+                       &kp CAPS &kp SPACE &kp ENTER &trans
+            >;
+        };
 
-    adjust_layer {
-        bindings = <
-            &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                            &kp F6 &kp F7 &kp F8 &kp F9 &kp F10
-            &bt BT_SEL 0  &bt BT_SEL 1   &bt BT_SEL 2 &bt BT_SEL 3 &none  &none &none &none &none &none
-            &bt BT_CLR &none &none &to 0 &to 1                            &none &none &none &none &none
-                    &none &none &none &trans
-        >;
+        adjust_layer {
+            bindings = <
+                &sys_reset  &kp F1 &kp F2 &kp F3 &kp F4        &kp F6 &kp F7 &kp F8 &kp F9 &kp F10
+                &bootloader &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3    &none &none &none &none &none
+                &bt BT_CLR  &bt BT_CLR_ALL  &bt BT_NXT &to 0 &to 1   &none &none &none &none &none
+                       &none &none &none &trans
+            >;
+        };
     };
 };
