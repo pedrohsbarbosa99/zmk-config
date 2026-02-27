@@ -48,7 +48,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <180>;
-            bindings = <&arrow_macro &fat_arrow_macro>;
+            bindings = <&fat_arrow_macro &arrow_macro>;
         };
 
         /* ===== NOVOS MO HOLD-TAP ===== */
@@ -115,8 +115,8 @@
         raise_layer {
             bindings = <
                 &kp EXCL &kp AT &kp HASH &kp DLLR &kp PRCNT      &kp CARET &kp AMPS &kp ASTRK &kp LPAR &kp RPAR
-                &kp LPAR &kp RPAR &quote_behavior DQT SQT &kp TILDE &kp COLON      &kp MINUS &kp EQUAL &kp LBRC &kp RBRC &kp BSLH
-                &kp LBRC &kp RBRC &kp PIPE &slash_qmark SLASH QUESTION &arrow_behavior 0 0      &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE
+                &kp LPAR &kp RPAR &quote_behavior SQT DQT &kp TILDE &kp COLON      &kp MINUS &kp EQUAL &kp LBKT &kp RBKT &kp BSLH
+                &kp LBRC &kp RBRC &kp PIPE &slash_qmark QUESTION SLASH &arrow_behavior 0 0      &kp UNDER &kp PLUS &kp LBRC &kp RBRC &kp PIPE
                        &kp CAPS &kp SPACE &kp ENTER &trans
             >;
         };
