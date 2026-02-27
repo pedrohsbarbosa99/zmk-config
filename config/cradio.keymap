@@ -9,25 +9,25 @@
         hrm: hrm_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
+            flavor = "balanced";
+            tapping-term-ms = <180>;
+            quick-tap-ms = <180>;
             bindings = <&kp &kp>;
         };
 
         slash_qmark: slash_qmark_ht {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            flavor = "balanced";
+            tapping-term-ms = <180>;
             bindings = <&kp &kp>;
         };
 
         quote_behavior: quote_ht {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
+            flavor = "balanced";
+            tapping-term-ms = <180>;
             bindings = <&kp &kp>;
         };
 
@@ -46,8 +46,8 @@
         arrow_behavior: arrow_ht {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            flavor = "balanced";
+            tapping-term-ms = <180>;
             bindings = <&arrow_macro &fat_arrow_macro>;
         };
 
@@ -56,16 +56,16 @@
         mo_tab: mo_tab_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
+            flavor = "balanced";
+            tapping-term-ms = <180>;
             bindings = <&kp &mo>;
         };
 
         mo_bspc: mo_bspc_hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "hold-preferred";
-            tapping-term-ms = <200>;
+            flavor = "balanced";
+            tapping-term-ms = <180>;
             bindings = <&kp &mo>;
         };
     };
