@@ -58,7 +58,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <180>;
-            bindings = <&kp &mo>;
+            bindings = <&mo &kp>;
         };
 
         mo_bspc: mo_bspc_hold_tap {
@@ -66,7 +66,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <180>;
-            bindings = <&kp &mo>;
+            bindings = <&mo &kp>;
         };
     };
 
@@ -87,7 +87,7 @@
                 &hrm LCTRL A  &hrm LALT S  &hrm LGUI D  &hrm LSHIFT F  &kp G
                 &kp H    &hrm RSHIFT J  &kp K    &hrm LALT L   &hrm RCTRL SEMI
                 &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N    &kp M    &kp COMMA &kp DOT  &kp SLASH
-                       &mo_tab TAB 2   &kp SPACE    &kp ENTER   &mo_bspc BSPC 3
+                       &mo_tab 2 TAB   &kp SPACE    &kp ENTER   &mo_bspc 3 BSPC
             >;
         };
 
@@ -97,7 +97,7 @@
                 &hrm LGUI A  &hrm LALT S  &hrm LCTRL D  &hrm LSHIFT F  &kp G
                 &kp H    &hrm RSHIFT J  &hrm RCTRL K  &hrm LALT L  &hrm RGUI SEMI
                 &kp Z    &kp X    &kp C    &kp V    &kp B        &kp N    &kp M    &kp COMMA &kp DOT  &kp SLASH
-                       &mo_tab TAB 2   &kp SPACE    &kp ENTER   &mo_bspc BSPC 3
+                       &mo_tab 2 TAB   &kp SPACE    &kp ENTER   &mo_bspc 3 BSPC
             >;
         };
 
